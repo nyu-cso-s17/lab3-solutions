@@ -1,0 +1,17 @@
+#!/usr/bin/env python2
+
+from testlib import *
+
+r = Runner()
+
+def matchtest(parent, name, points, *args, **kw):
+    def do_test():
+        r.match(*args, **kw)
+    test(points, name, parent=parent)(do_test)
+
+@test(0, "[part5.c]")
+def test_part5():
+    r.run_test("build/part5")
+matchtest(test_part5, "part5", 20, "part5: OK")
+
+run_tests()

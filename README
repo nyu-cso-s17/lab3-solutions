@@ -1,0 +1,4 @@
+This is the staff source repo for the second lab for reading assembly.
+
+To produce a version of the code suitable for student consumption
+(i.e. without the solution), run "make export-lab".

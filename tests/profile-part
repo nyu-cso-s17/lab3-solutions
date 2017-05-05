@@ -1,0 +1,7 @@
+#!/bin/bash
+
+[ $# -eq 0 ] && { echo "Usage: profile-part N (where N is the part to be tested)"; exit 1; }
+
+rm -rf *.trace
+valgrind --tool=cachegrind  --D1=1024,16,32 --cachegrind-out-file=cache.trace ./build/part$1 
+cg_annotate --threshold=0.05 --show=D1mr,D1mw cache.trace

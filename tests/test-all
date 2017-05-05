@@ -1,0 +1,23 @@
+#!/bin/bash
+
+make
+
+echo "Part 1 ========================================================================="
+tests/test-part1 && tests/profile-part 1 2>&1 | grep -A 20 "file:function" | egrep "file:function|------|part1"
+echo ""
+
+echo "Part 2 ========================================================================="
+tests/test-part2 && tests/profile-part 2 2>&1 | grep -A 20 "file:function" | egrep "file:function|------|part2"
+echo ""
+
+echo "Part 3 ========================================================================="
+tests/test-part3 && tests/profile-part 3 2>&1 | grep -A 20 "file:function" | egrep "file:function|------|part3"
+echo ""
+
+echo "Part 4 ========================================================================="
+tests/test-part4 && tests/profile-part 4 2>&1 | grep -A 20 "file:function" | egrep "file:function|------|part4"
+echo ""
+
+echo "Part 5 ========================================================================="
+tests/test-part5 && tests/profile-part 5 2>&1 | grep -A 20 "file:function" | egrep "file:function|------|part5"
+echo ""
